@@ -894,3 +894,168 @@ body {
   background: #0ea5e9;
   transform: scale(1.05);
 }
+/* ======== Contact Form ======== */
+.contact-form {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px 18px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  color: #f5f5f5;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 5px 15px rgba(0, 188, 212, 0.1);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #b0b0b0;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(0, 188, 212, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 188, 212, 0.3);
+}
+
+.contact-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+/* ======== Send Button ======== */
+.send-btn {
+  background: linear-gradient(90deg, #00bcd4, #00e5ff);
+  color: #0f172a;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.send-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
+}
+
+/* ======== Responsive ======== */
+@media (max-width: 600px) {
+  .contact-form {
+    max-width: 90%;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 15px;
+  }
+}
+
+
+/* ======== Contact Form (Glass Style) ======== */
+.glass-form {
+  margin-top: 60px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px;
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.glass-form input,
+.glass-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #f5f5f5;
+  font-size: 1rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-form input:focus,
+.glass-form textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 8px #00e5ff;
+}
+
+.glass-form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+.send-btn {
+  background: #00bcd4;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.send-btn:hover {
+  background: #00e5ff;
+  transform: scale(1.05);
+}
+/* ===== Popup Notification ===== */
+.popup {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: popupIn 0.4s ease forwards;
+}
+
+.popup.success {
+  background-color: #4caf50; /* green */
+}
+
+.popup.error {
+  background-color: #f44336; /* red */
+}
+
+.popup svg {
+  font-size: 1.2rem;
+}
+
+/* Popup animation */
+@keyframes popupIn {
+  0% { opacity: 0; transform: translateY(-20px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
