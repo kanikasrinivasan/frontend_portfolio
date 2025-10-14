@@ -1,50 +1,60 @@
 import React, { useRef, useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaCheck, FaTimes } from "react-icons/fa";
-import emailjs from "emailjs-com";
+ // Make sure to add your CSS here
 
 const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState(null); // null | "success" | "error"
 
-  const sendEmail = (e) => {
+  const BACKEND_URL = "https://your-backend.onrender.com"; // Replace with your Render backend URL
+
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "your_service_id",      // Replace with your EmailJS Service ID
-        "your_template_id",     // Replace with your EmailJS Template ID
-        form.current,
-        "your_public_key"       // Replace with your EmailJS Public Key
-      )
-      .then(
-        () => {
-          setStatus("success");
-          setTimeout(() => setStatus(null), 4000); // hide after 4s
-          e.target.reset();
-        },
-        (error) => {
-          console.log(error.text);
-          setStatus("error");
-          setTimeout(() => setStatus(null), 4000);
-        }
-      );
+    const formData = {
+      name: form.current.user_name.value,
+      email: form.current.user_email.value,
+      message: form.current.message.value,
+    };
+
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        form.current.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+
+    setTimeout(() => setStatus(null), 4000);
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className="contact-section">
       <h2>Contact Me</h2>
-      <p>Feel free to reach out via email, phone, or use the form below.</p>
+      <p>Reach out via email, phone, or use the form below!</p>
 
       {/* Contact Cards */}
       <div className="contact-cards">
         <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=kanikasrinivasan4@gmail.com"
+          href="mailto:kanikasrinivasan4@gmail.com"
           target="_blank"
           rel="noreferrer"
           className="contact-card"
         >
           <div className="icon-circle"><FaEnvelope /></div>
-          <span>Gmail</span>
+          <span>Email</span>
         </a>
 
         <a href="tel:9524577795" className="contact-card">
