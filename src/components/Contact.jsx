@@ -1,12 +1,13 @@
 import React, { useRef, useState } from "react";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaCheck, FaTimes } from "react-icons/fa";
- // Make sure to add your CSS here
+// Make sure to include your CSS
 
 const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState(null); // null | "success" | "error"
 
-  const BACKEND_URL = "https://backend-portfolio-4-e60x.onrender.com"; // Replace with your Render backend URL
+  // Use your deployed Render backend URL here
+  const BACKEND_URL = "https://backend-portfolio-4-e60x.onrender.com";
 
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -33,10 +34,11 @@ const Contact = () => {
         setStatus("error");
       }
     } catch (err) {
-      console.error(err);
+      console.error("Error sending message:", err);
       setStatus("error");
     }
 
+    // Hide popup after 4 seconds
     setTimeout(() => setStatus(null), 4000);
   };
 
@@ -47,12 +49,7 @@ const Contact = () => {
 
       {/* Contact Cards */}
       <div className="contact-cards">
-        <a
-          href="mailto:kanikasrinivasan4@gmail.com"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-card"
-        >
+        <a href="mailto:kanikasrinivasan4@gmail.com" className="contact-card">
           <div className="icon-circle"><FaEnvelope /></div>
           <span>Email</span>
         </a>
@@ -62,22 +59,12 @@ const Contact = () => {
           <span>Call</span>
         </a>
 
-        <a
-          href="https://linkedin.com/in/kanika-srinivasan-8aab862b2"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-card"
-        >
+        <a href="https://linkedin.com/in/kanika-srinivasan-8aab862b2" target="_blank" rel="noreferrer" className="contact-card">
           <div className="icon-circle"><FaLinkedin /></div>
           <span>LinkedIn</span>
         </a>
 
-        <a
-          href="https://github.com/kanikasrinivasan"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-card"
-        >
+        <a href="https://github.com/kanikasrinivasan" target="_blank" rel="noreferrer" className="contact-card">
           <div className="icon-circle"><FaGithub /></div>
           <span>GitHub</span>
         </a>
