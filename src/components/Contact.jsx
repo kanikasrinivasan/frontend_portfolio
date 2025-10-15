@@ -6,7 +6,7 @@ const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState(null); // null | "success" | "error"
 
-  const BACKEND_URL = "https://backend-portfolio-1-qvfs.onrender.com"; // Replace with your Render backend URL
+  const BACKEND_URL = "https://backend-portfolio-4-e60x.onrender.com"; // Replace with your Render backend URL
 
   const sendEmail = async (e) => {
     e.preventDefault();
