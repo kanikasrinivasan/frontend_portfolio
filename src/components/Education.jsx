@@ -3,13 +3,14 @@ import { FaGraduationCap } from "react-icons/fa";
 
 const Education = () => {
   const educationData = [
-    {
-      level: "SSLC (10th Grade)",
-      school: "Sacred Heart Girls Higher Secondary School",
-      year: "2020",
-      score: "9.2 / 10 CGPA",
-      desc: "Strong foundation in academics with focus on mathematics and science.",
+     {
+      level: "Undergraduate (B.E Computer Science and technology)",
+      school: "Vivekanandha College of Engineering for Women",
+      year: "2022 - 2026",
+      score: "8.5 / 10 CGPA",
+      desc: "Currently pursuing Computer Science degree with focus on programming, algorithms, and databases.",
     },
+    
     {
       level: "HSC (12th Grade)",
       school: "Vairms Matriculation Higher Secondary School",
@@ -18,12 +19,13 @@ const Education = () => {
       desc: "Specialized in Computer Science and Mathematics with practical exposure.",
     },
     {
-      level: "Undergraduate (B.Sc Computer Science)",
-      school: "Vivekananda College of Engineering for Women",
-      year: "2022 - 2026",
-      score: "8.5 / 10 CGPA",
-      desc: "Currently pursuing Computer Science degree with focus on programming, algorithms, and databases.",
+      level: "SSLC (10th Grade)",
+      school: "Sacred Heart Girls Higher Secondary School",
+      year: "2020",
+      score: "9.2 / 10 CGPA",
+      desc: "Strong foundation in academics with focus on mathematics and science.",
     },
+   
   ];
 
   return (

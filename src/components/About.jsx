@@ -12,15 +12,13 @@ const About = () => {
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-            I'm <strong>Kanika</strong>, a passionate developer skilled in Flutter, React, and AI/ML.
+            I'm <strong>Kanika</strong>, a final-year student and passionate developer who loves turning ideas into impactful digital experiences.
           </p>
           <p>
-            I love building elegant, user-friendly applications and exploring innovative technologies
-            that solve real-world problems.
+          I specialize in Flutter and the MERN Stack, creating smooth, user-friendly mobile and web applications. Alongside development, I’m deeply interested in Power BI and Data Analytics, transforming raw data into meaningful insights and smarter decisions.
           </p>
           <p>
-            My goal is to craft meaningful digital experiences and continuously improve my skills to deliver
-            high-quality solutions.
+            Driven by curiosity and creativity, I enjoy exploring how technology and data can work together to solve real-world problems. My goal is to keep learning, growing, and building innovative solutions that make a difference.
           </p>
         </div>
       </div>
